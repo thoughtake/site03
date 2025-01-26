@@ -1,7 +1,7 @@
 # site03
 このリポジトリは、過去に制作した施設サイトです。<br>
 WordPressをベースに構築しました。<br><br>
-実際のサイトは[こちら](https://muyusen-toyomi.com/)からご覧ください。
+実際のサイトは[こちら](https://muyusen-toyomi.com/)
 
 ## 使用技術
 - HTML
