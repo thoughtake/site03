@@ -1,0 +1,73 @@
+// モーダル画面
+#modal-dial {
+  display: none;
+}
+.modaal-container {
+  background: inherit;
+  .modaal-content-container {
+    padding: 0;
+    @include mq(sm) {
+      padding: 30px;
+    }
+  }
+  .modaal-close {
+    top: 80px;
+  }
+  .dial-box {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background: $background-01;
+    overflow-x: hidden;
+    .dial-title {
+      background-color: $color-back-03;
+      text-align: center;
+      color: $color-white;
+      padding: 1rem;
+      font-size: 2.1rem;
+      @media screen and (max-width:430px) { 
+        font-size: 1.8rem;
+      }
+      @include mq(sm) {
+        font-size: 2.5rem;
+      }
+      @include mq(md) {
+        font-size: 3rem;
+      }
+      span {
+        display: inline-block;
+      }
+    }
+    .dial-tell {
+      display: block;
+      text-align: center;
+      color: $color-back-04;
+      padding: 2rem 0 .5rem;
+      font-size: 2.8rem;
+      @media screen and (max-width:430px) { 
+        font-size: 2rem;
+      }
+      @include mq(sm) {
+        font-size: 3.6rem;
+      }
+      @include mq(md) {
+        font-size: 4rem;
+      }
+      i {
+        display: inline-block;
+        margin-right: .5rem;
+      }
+    }
+    .dial-text {
+      padding: 1rem;
+      text-align: center;
+      font-size: $font-size-h4;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-h4} * #{$rsp});
+      }
+      span {
+        display: inline-block;
+      }
+    }
+  }
+}

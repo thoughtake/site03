@@ -1,0 +1,15 @@
+.wp-page-notfound {
+  .notfound-content {
+    p {
+      text-align: center;
+      font-size: $font-size-h4;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-h4} * #{$rsp});
+      }
+      a {
+        color: $color-main;
+        text-decoration: underline;
+      }
+    }
+  }
+}

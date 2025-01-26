@@ -1,0 +1,43 @@
+.wp-page-contact {
+  .contact-content {
+    // 確認ページ
+    &.check {
+      .check__title {
+        font-size: $font-size-h2;
+        margin-bottom: 1em;
+        text-align: center;
+        font-weight: 600;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h2} * #{$rsp});
+        }      
+      }
+      .contact-content__notes {
+        margin-bottom: 0;
+      }
+      .contact-content__form {
+        margin-bottom: 2rem;
+        .ct-form {
+          .input-wrapper {
+            &__input {
+              background: $background-01;
+              padding: 0.6em;
+            }
+          } 
+        }
+      }
+    }
+  }
+  &.contact-check {
+    .contact-content {
+      &__form {
+        .submit-box {
+          .wrapper {
+            &.back {
+              display: inline-block !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

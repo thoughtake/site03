@@ -1,0 +1,148 @@
+.wp-page-about {
+  .about-efficacy {
+    padding: 20px 0;
+    &__title {
+      color: $color-main;
+      border-bottom: 3px solid $color-main;
+    }
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      @include mq(md) {
+        margin-bottom: 2rem;
+      }
+    }
+    &__box {
+      width: 100%;
+      margin: 0 0 2rem 0;
+      border: 4px solid $color-main;
+      border-radius: 10px;
+      padding: 2rem;
+      @include mq(md) {
+        width: calc(50% - 2rem);
+        margin: 0 1rem 0 1rem;
+        padding: 1rem;
+      }
+      @include mq(lg) {
+        padding: 2rem;      
+      }
+      &__title {
+        color: $color-main;
+        text-align: center;
+        margin-bottom: 0.8em;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 1rem;
+        &:last-of-type {
+          margin-bottom: 2rem;
+        }
+      }
+      &__leading {
+        margin-bottom: 2.5rem !important;
+        span {
+          display: inline-block;
+        }
+      }
+      &__image {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        img {
+          max-width: 80%;
+          object-fit: contain;
+          display: block;
+          line-height: 1;
+          &.blood01 {
+            width: 30%;
+          }
+          &.blood02 {
+            width: 60%;
+          }       
+          &.extract01 {
+            width: 40%;
+            margin-right: 5%;
+            margin-bottom: 0;
+            background-color: $color-white;
+            border-radius: 50%;
+          }   
+          &.extract02 {
+            width: 40%;
+            margin-left: 5%;
+          }
+          &.loosen {
+            width: 50%;
+          }
+          @include mq(md) {
+            &.blood01 {
+              width: 40%;
+            }
+            &.blood02 {
+              width: 80%;
+            }         
+            &.extract01 {
+              width: 80%;
+              margin-right: 0;
+              margin-bottom: 2rem;
+            }   
+            &.extract02 {
+              width: 80%;
+              margin-left: 0;
+            }      
+            &.loosen {
+              width: 50%;
+            }
+          }
+          @include mq(lg) {
+            &.blood01 {
+              width: 26%;
+            }
+            &.blood02 {
+              width: 50%;
+            }            
+            &.extract01 {
+              width: 40%;
+              margin-right: 5%;
+              margin-bottom: 0;
+            }   
+            &.extract02 {
+              width: 40%;
+              margin-left: 5%;
+            }
+            &.loosen {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+    &__list {
+      background: $background-03;
+      color: $color-white;
+      padding: 2rem;
+      &__title {
+        text-align: center;
+        border-bottom: 2px solid $color-white;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+      ul {
+        li {
+          font-size: $font-size-small;
+          display: inline-block;
+          background-color: $color-white;
+          color: $color-main;
+          margin-right: 0.7rem;
+          margin-bottom: 0.5rem;
+          padding: 0.1em 0.5em;
+          border-radius: 999px;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-small} * #{$rsp});
+          }
+        }
+      }
+    }
+  }
+}

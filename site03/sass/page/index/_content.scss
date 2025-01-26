@@ -1,0 +1,180 @@
+$index-image-width: 120px;
+$index-padding: 20px;
+
+.wp-page-index {
+  .index-content {
+    padding: 0;
+    .index-lists {
+      background: $color-white;
+      &__list {
+        padding: $index-padding 0;
+        position: relative;
+        overflow: hidden;
+        border-bottom: .2px solid $color-back-03;
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          border: solid transparent;
+          width: 0;
+          height: 0;
+          transition: all .5s;
+          pointer-events: none;
+          z-index: calc(#{map-get($layer, 'default')} + 1);
+        }
+        &::before {
+          top: 0;
+          left: 0;
+          border-width: 2px 0 0 2px;
+        }
+        &::after {
+          bottom: 0;
+          right: 0;
+          border-width: 0 2px 2px 0;
+        }
+        & > a {
+          display: flex;
+        }
+        &__image {
+          position: relative;
+          width: $index-image-width;
+          &::after {
+            content: "";
+            display: inline-block;
+            padding-top: 100%;
+          }
+          &__box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            line-height: 1;
+            padding-left: $index-padding;
+            overflow: hidden;
+            background: transparent;
+            z-index: map-get($layer, 'default');
+            &.box-default {
+              img {
+                opacity: 0.7;
+                object-position: center center;
+              }
+            }
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              object-position: center top;
+            }
+          }
+        }
+        .wrapper {
+          width: calc(100% - #{$index-image-width});
+          overflow: hidden;
+          @include mq(sm) {
+            min-height: 180px;            
+          }
+          &__box {
+            padding: 0 $index-padding;
+          }
+        }
+        &__category {
+          margin-bottom: .3rem;
+          font-family: $font-family-gothic;
+          span {
+            display: inline-block;
+            font-size: $font-size-small;
+            padding: .3em;
+            border-radius: 3px;
+            @include mq(sm) {
+              font-size: calc(#{$font-size-small} * #{$rsp});
+            }
+            &.information {
+              background-color: $color-attention;
+            }
+            &.article {
+              background: $background-03;
+              color: $color-white;
+            }
+          }
+        }
+        &__time {
+          display: inline-block;
+          font-size: $font-size-small;
+          line-height: 1;
+          margin-bottom: .5rem;
+          color: $color-gray;
+          font-family: $font-family-gothic;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-small} * #{$rsp});
+          }
+          i {
+            margin-right: .3em;
+            font-size: .9em;
+          }
+        }
+        &__title {
+          position: relative;
+          font-family: $font-family-gothic;
+          font-size: $font-size-h4;
+          margin-bottom: .3rem;
+          line-height: 1.5;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-h4} * #{$rsp});
+          }
+          span {
+            position: relative;
+            color: $color-back-03;
+            transition: all .5s;
+            z-index: calc(#{map-get($layer, 'default')} + 2);
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: calc(100% + 40px);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, $color-back-03 50%);
+            background-position: 0 0;
+            background-size: 200% auto;
+            transition: all .5s;
+            z-index: calc(#{map-get($layer, 'default')} + 1);
+          }
+        }
+        &__text {
+          display: none;
+          @include mq(sm) {
+            display: block;
+          }
+          p {
+            color: $color-gray;
+          }
+        }
+        &:hover {
+          &::before, &::after {
+            width: 100%;
+            height: 100%;
+            border-color: $color-back-03;
+          }
+          .index-lists__list__title {
+            span {
+              color: $color-white;
+            }
+            &::after {
+              background-position: -100% 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .index-pagenavi {
+    padding: 0 0 40px;
+    .container {
+      div {
+        background: $color-white;
+      }
+    }
+  }
+}

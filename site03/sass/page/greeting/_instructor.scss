@@ -1,0 +1,51 @@
+.greeting-instructor {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 4rem;
+    @include mq(md) {
+      width: 70%;
+      margin-bottom: 0;
+    }
+  }
+  .image-wrapper {
+    width: 100%;
+    @include mq(md) {
+      width: 30%;
+    }
+    .img-box {
+      width: 100%;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  &__name {
+    text-align: center;
+    color: $color-back-03;
+    margin-bottom: 2rem;
+    
+    span {
+      &:first-child {
+        font-size: 0.6em;
+      }
+    }
+  }
+  &__leading {
+    font-size: $font-size-h3;
+    text-align: center;
+    @include mq(sm) {
+      font-size: calc(#{$font-size-h3} * #{$rsp});
+    }
+    & > span {
+      display: inline-block;
+    }
+  }
+}
+

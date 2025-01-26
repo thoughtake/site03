@@ -1,0 +1,32 @@
+.wp-page-contact {
+  .contact-content {
+    // 完了ページ
+    &.done {
+      .done__title {
+        font-size: $font-size-h2;
+        margin-bottom: 1em;
+        text-align: center;
+        font-weight: 600;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h2} * #{$rsp});
+        }      
+      }
+      .done__content {
+        p {
+          text-align: center;
+          margin-bottom: 2em;
+          font-size: $font-size-h4;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-h4} * #{$rsp});
+          }
+        }
+        .strong {
+          font-size: 1em;
+        }
+      }
+      .contact-content__notes {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

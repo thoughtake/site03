@@ -1,0 +1,59 @@
+.wp-page-about {
+  .about-mogusa {
+    padding: 20px 0;
+    &__title {
+      color: $color-main;
+      border-bottom: 3px solid $color-main;
+    }
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__image {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 3%;
+      @include mq(md) {
+        width: 25%;
+        margin-bottom: 0;
+      }
+      img {
+        display: inline-block;
+        width: 70%;
+        object-fit: contain;
+        @include mq(md) {
+          width: 100%;
+        }
+      }
+    }
+    &__text {
+      width: 100%;
+      padding: 0;
+      @include mq(md) {
+        width: 75%;
+        padding: 0 30px;
+      }
+      &__content02 {
+        display: flex;
+        flex-wrap: wrap;
+        p {
+          width: 70%;
+          @include mq(xs) {
+            width: 100%;
+          }
+        }
+        img {
+          display: block;
+          object-fit: contain;
+          width: 30%;
+          padding: 0;
+          @include mq(xs) {
+            width: 100%;
+            padding: 10%;
+          }
+        }
+      }
+    }
+  }
+}

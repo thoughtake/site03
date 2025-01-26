@@ -1,0 +1,63 @@
+.greeting-history {
+  &__title {
+    color: $color-back-03;
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 100%;
+    & > span {
+      display: inline-block;
+    }
+  }
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__image {
+    width: 100%;
+    @include mq(lg) {
+      width: 25%
+    }
+    .img-box {
+      position: relative;
+      width: 100%;
+      img {
+        object-fit: contain;
+      }
+    }
+    span {
+      font-size: $font-size-default;
+      width: 100%;
+      text-align: center;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-default} * #{$rsp});
+      }
+    }
+  }
+  &__text {
+    width: 100%;
+    padding: 0;
+    @include mq(lg) {
+      width: 75%;
+      padding: 0 30px;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+  }
+  &.history01 {
+    .greeting-history__image {
+      margin-bottom: 2rem;
+      @include mq(lg) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.history02 {
+    .greeting-history__text {
+      margin-bottom: 2rem;
+      @include mq(lg) {
+        margin-bottom: 0;
+      }      
+    }
+  }
+}

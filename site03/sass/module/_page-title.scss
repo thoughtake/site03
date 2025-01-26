@@ -1,0 +1,39 @@
+.page-title {
+  height: $page-title-height-sp;
+  background: $color-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  padding: 2rem;
+  @include mq(sm) {
+    height: $page-title-height;
+  }
+  &__title {
+    font-size: $font-size-h1;
+    @include mq(sm) {
+      font-size: calc(#{$font-size-h1} * #{$rsp});
+    }
+  }
+  &.greeting {
+    background: url(../img/greeting-image.jpeg) no-repeat center center / cover;
+  }
+  &.about {
+    background: url(../img/about-image.jpeg) no-repeat center center / cover;
+  }
+  &.course {
+    background: url(../img/course-image.jpg) no-repeat center center / cover;
+  }
+  &.index {
+    background: url(../img/news-image.jpeg) no-repeat center center / cover;
+  }
+  &.access {
+    background: url(../img/access-image.jpeg) no-repeat center center / cover;
+  }
+  &.contact {
+    background: url(../img/contact-image.jpeg) no-repeat center center / cover;
+  }
+  &.notfound {
+    background: $color-back-03;
+  }
+}

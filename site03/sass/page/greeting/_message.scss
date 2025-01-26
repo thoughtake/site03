@@ -1,0 +1,10 @@
+.greeting-message {
+  text-align: center;
+  p {
+    font-size: $font-size-h4;
+    margin-bottom: 1em;
+    @include mq(sm) {
+      font-size: calc(#{$font-size-h4} * #{$rsp});
+    }
+  }
+}

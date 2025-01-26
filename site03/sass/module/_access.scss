@@ -1,0 +1,203 @@
+.template-access {
+  display: flex;
+  flex-wrap: wrap;
+  background: $background-02;
+  padding: 40px 0;
+  @include mq(lg) {
+    padding: 40px 0;
+  }
+  // 左box
+  .box-top {
+    position: relative;
+    width: 0%;
+    &::after {
+      display: inline-block;
+      padding-top: 100%;
+      content: "";
+    }
+    @include mq(lg) {
+      width: 30%;
+      &::after {
+        display: none;
+      }
+    }
+    img {
+      position: absolute;
+      object-fit: contain;
+      display: block;
+      max-height: 85%;
+      border-radius: 20px;
+      &.access-img01 {
+        top: 45%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+      }
+      &.access-img02 {
+        top: 80%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+      }
+    }
+  }
+  // 真ん中box
+  .box-middle {
+    width: 100%;
+    color: $color-white;
+    margin-bottom: 1rem;
+    @include mq(lg) {
+      width: 40%;
+      margin-bottom: 0;
+    }
+    address {
+      font-style: normal;
+    }
+    .access-title {
+      text-align: center;
+      font-size: $font-size-h3;
+      margin-bottom: 2rem;
+      line-height: 1;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-h3} * #{$rsp});
+      }
+      & > span {
+        display: inline-block;
+        &.hoyojo {
+          padding: 0 1rem;
+          font-size: 1em;
+        }
+      }
+    }
+    .access-address {
+      font-size: $font-size-default;
+      margin-bottom: 1em;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-default} * #{$rsp});
+      }
+    }
+    .access-access {
+      color: $color-main-light;
+      font-size: $font-size-default;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-default} * #{$rsp});
+      }
+      margin-bottom: 1em;
+      & > img {
+        display: inline-block;
+        width: $font-size-default;
+        height: $font-size-default;
+        object-fit: cover;
+        object-position: center bottom;
+        margin-right: 0.3rem;
+        @include mq(sm) {
+          width: calc(#{$font-size-default} * #{$rsp});
+          height: calc(#{$font-size-default} * #{$rsp});          
+        }
+      }
+      span {
+        position: relative;
+      }
+    }
+    .access-contact {
+      margin-bottom: calc(2rem - 20px);
+      font-size: $font-size-default;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-default} * #{$rsp});
+      }
+      & > img {
+        display: inline-block;
+        width: $font-size-default;
+        height: $font-size-default;
+        object-fit: cover;
+        object-position: center bottom;
+        margin-right: 0.3rem;
+        @include mq(sm) {
+          width: calc(#{$font-size-default} * #{$rsp});
+          height: calc(#{$font-size-default} * #{$rsp});          
+        }
+      }      
+      &__tel {
+        text-decoration: underline;
+        font-size: $font-size-h3;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h3} * #{$rsp});
+        }
+      }
+      &__kinds {
+        font-size: 0.9em;
+      }
+    }
+    .access-message {
+      text-align: center;
+    }
+  }
+  // 右box
+  .box-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @include mq(lg) {
+      width: 30%;
+    }
+    .access-map {
+      position: relative;
+      width: 100%;
+      border: 20px solid #000;
+      @include mq(lg) {
+        border: none;
+        width: 90%;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        padding-top: 60%;
+        @include mq(lg) {
+          padding-top: 100%;
+        }
+      }
+      & > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  // 日本橋
+  &.access-nihonbashi {
+    background: $background-03;
+    .box-top {
+      img {
+        max-height: none;
+        &.access-img01 {
+          top: 0;
+          left: 0;
+          transform: translate(0);
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .box-middle {
+      .access-access {
+        color: $color-attention;
+      }
+      .access-contact {
+        &__tel {
+          font-size: $font-size-h3;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-h3} * #{$rsp});
+          }
+        }
+      }
+    }
+    .box-bottom {
+      .access-map {
+        border-color: $color-back-03;
+      }
+    }
+  }
+}

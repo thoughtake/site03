@@ -1,0 +1,199 @@
+.wp-page-contact {
+  .contact-content {
+    &__message {
+      font-size: $font-size-h3;
+      margin-bottom: 2rem;
+      text-align: center;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-h3} * #{$rsp});
+      }
+      & > span {
+        display: inline-block;
+      }
+    }
+    &__tel {
+      font-size: $font-size-h2;
+      text-align: center;
+      margin-bottom: 4rem;
+      color: $color-back-04;
+      i {
+        display: inline-block;
+        margin-right: 1rem;
+      }
+      @include mq(sm) {
+        font-size: calc(#{$font-size-h2} * #{$rsp});
+      }
+      & > img {
+        display: inline-block;
+        width: 2.2rem;
+        height: 2.2rem;
+        object-fit: cover;
+        object-position: center bottom;
+        margin-right: 0.3rem;
+      }   
+    }
+    &__notes {
+      font-size: $font-size-default;
+      text-align: center;
+      margin-bottom: 2rem;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-default} * #{$rsp});
+      }
+      ul {
+        display: inline-block;
+        text-align: left;
+      }
+      &__note {
+        color: $color-main;
+        margin-bottom: .5em;
+        .strong {
+          font-size: 1em;
+        }
+      }
+    }
+    &__form {
+      margin-bottom: 5rem;
+      .ct-form {
+        width: 100%;
+        margin: 0;
+        background: $background-03;
+        padding: 2rem;
+        @include mq(md) {
+          width: 80%;
+          margin: 0 auto;
+        }
+        @include mq(lg) {
+          width: 50%;
+          margin: 0 auto;
+        }
+        .input-wrapper {
+          font-size: $font-size-default;
+          margin-bottom: 2rem;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-default} * #{$rsp});
+          }
+          &:last-child {
+            margin-bottom: 4rem;
+          }
+        }
+        label {
+          display: inline-block;
+          font-size: $font-size-default;
+          line-height: 1;
+          color: $color-white;
+          margin-bottom: .5em;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-default} * #{$rsp});
+          }
+          &.error {
+            color: $color-attention;
+          }
+        }
+        input {
+          display: inline-block;
+          width: 100%;
+          padding: 0.6em;
+          font-size: $font-size-default;
+          background: $background-01;
+          box-shadow: 0 0 5px 3px rgba(43,43,43,0.3) inset;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-default} * #{$rsp});    
+          }
+          &[type="submit"]  {
+            width: auto;
+            padding: 0.5em 2.5em 0.5em 2em;
+            display: inline-block;
+            background: $background-04;
+            margin-bottom: 0;
+            border-radius: 5px;
+            box-shadow: none;
+          }    
+          &.error {
+            border: 3px solid $color-attention;
+          } 
+        }
+        .submit-box {
+          text-align: center;
+          .wrapper {
+            position: relative;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            &::before {
+              content: "";
+              position: absolute;
+              top: calc(50% + 2px);
+              right: 20px;
+              transform: translateY(-50%) rotate(45deg);
+              border-top: 4px solid $color-white;
+              border-right: 4px solid $color-white;
+              border-radius: 4px;
+              width: 15px;
+              height: 15px;
+              pointer-events: none;
+            }
+            &::after {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              content: "";
+              width: 100%;
+              height: 100%;
+              border-radius: 5px;
+              border: 2px solid transparent;
+              transition: all .5s;
+              pointer-events: none;
+            }
+            &:hover {
+              &::after {
+                border-color: $color-white;
+                width: 95%;
+                height: 80%;
+              }
+            }          
+            &.back {
+              display: none;
+              input[type="submit"] {
+                padding: 0.5em 2em 0.5em 2.5em !important;
+              }
+              &::before {
+                right: auto;
+                left: 20px;
+                border-top: none;
+                border-right: none;
+                border-bottom: 4px solid $color-white;
+                border-left: 4px solid $color-white;         
+              }
+            }
+          }
+
+        }
+        textarea {
+          font-size: $font-size-default;
+          width: 100%;
+          height: 500px;
+          padding: 0.6em;
+          background: $background-01;    
+          box-shadow: 0 0 5px 3px rgba(43,43,43,0.3) inset;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-default} * #{$rsp});
+          }
+          &.error {
+            border: 3px solid $color-attention;
+          } 
+        }
+        span.error {
+          font-size: $font-size-small;
+          color: $color-attention;
+          display: block;
+          margin-top: 0.3em;
+          @include mq(sm) {
+            font-size: calc(#{$font-size-small} * #{$rsp});
+          }
+        }
+      }
+    }
+  }
+}

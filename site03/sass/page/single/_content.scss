@@ -1,0 +1,189 @@
+$single-padding: 20px;
+
+.wp-single {
+  .single-content {
+    .title-wrapper {
+      position: relative;
+      background: $background-03;
+      height: $single-title-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $single-padding;
+      overflow: hidden;
+      span {
+        position: relative;
+        z-index: calc(#{map-get($layer, 'default')} + 2);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        bottom: -30px;
+        width: 200px;
+        height: 200px;
+        background: url(../img/cover1_black.png) no-repeat center center / contain;
+        opacity: 0.3;
+        z-index: calc(#{map-get($layer, 'default')} + 1);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: -10px;
+        top: -30px;
+        width: 200px;
+        height: 300px;
+        background: url(../img/cover2_black.png) no-repeat center center / contain;
+        opacity: 0.3;
+        z-index: calc(#{map-get($layer, 'default')} + 1);
+      }
+    }
+    &__title {
+      color: $color-white;
+      font-size: $font-size-h3;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-h3} * #{$rsp});
+      }
+    }
+    
+    // 本文とリンク
+    .main-wrapper {
+      border: 3px solid $color-back-03;
+      background: $background-07;
+      padding: $single-padding;
+    }
+    &__date {
+      color: $color-back-03;
+      display: block;
+      text-align: right;
+      font-size: $font-size-default;
+      @include mq(sm) {
+        font-size: calc(#{$font-size-default} * #{$rsp});
+      }
+    }
+    &__content {
+      padding: calc(#{$single-padding}*2) 0 calc(#{$single-padding}*4);
+      h2 {
+        background: $background-03;
+        color: $color-white;
+        text-align: center;
+        padding: .3em;
+        margin: 2em 0;
+        font-size: $font-size-h3;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h3} * #{$rsp});
+        }
+      }
+      h3 {
+        position: relative;
+        color: $color-back-03;
+        text-align: center;
+        padding: .3em;
+        margin: 1em 0;
+        font-size: $font-size-h4;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h4} * #{$rsp});
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 3px;
+          background-color: $color-back-03;
+          border-radius: 999px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 3px;
+          background-color: $color-back-03;
+          border-radius: 999px;
+        }
+      }
+      h4 {
+        width: 60%;
+        margin: 1em auto;
+        padding: .2em;
+        color: $color-back-03;
+        text-align: center;
+        border: 3px solid $color-back-03;
+        border-radius: 10px;
+        font-size: $font-size-h5;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h5} * #{$rsp});
+        }
+      }
+      h5 {
+        color: $color-back-03;
+        font-size: $font-size-default;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-default} * #{$rsp});
+        }
+        text-decoration: underline;
+        margin: .5em 0;
+      }
+      h6 {
+        color: $color-text;
+        font-size: $font-size-default;
+        font-weight: bold;
+        margin: .5em 0;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-default} * #{$rsp});
+        }
+      }
+      figure {
+        margin: 2rem;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    // 投稿リンク
+    &__postLinks {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-top: 3px solid $color-back-03;
+      padding-top: calc(#{$single-padding});
+      .postLink {
+        font-size: $font-size-default;
+        width: 100%;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-default} * #{$rsp});
+        }
+        @include mq(md) {
+          width: 47%;
+        }
+        a {
+          background: $background-03;
+          width: 100%;
+        }
+        &.postLink-prev {
+          margin-bottom: 1em;
+          @include mq(md) {
+            margin-bottom: 0;
+          }
+          a {
+            padding: 0.5em 2em 0.5em 2.5em !important;
+            &::before {
+              right: auto;
+              left: 20px;
+              border-top: none;
+              border-right: none;
+              border-bottom: 4px solid $color-white;
+              border-left: 4px solid $color-white;         
+            }
+          }
+        }
+      }
+    }
+  }
+}

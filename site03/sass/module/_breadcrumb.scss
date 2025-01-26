@@ -1,0 +1,13 @@
+.breadcrumb {
+  font-size: $font-size-default;
+  padding: 1rem 0;
+  @include mq(sm) {
+    font-size: calc(#{$font-size-default} * #{$rsp});  
+  }
+  .breadcrumb_inner {
+    color: $color-back-03;
+    i {
+      padding: 0 0.5rem;
+    }
+  }
+}

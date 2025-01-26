@@ -1,0 +1,68 @@
+.wp-page-about {
+  .about-question {
+    padding: 20px 0;
+    &__title {
+      color: $color-main;
+      border-bottom: 3px solid $color-main;
+      span {
+        display: inline-block;
+      }
+    }
+    &__image {
+      position: relative;
+      text-align: center;
+      padding: 1rem 0;
+      img {
+        display: inline-block;
+        object-fit: contain;
+        width: 70%;
+        @include mq(md) {
+          width: 27%;
+        }
+        @include mq(lg) {
+          width: 20%;
+        }
+        &.okyu02 {
+          position: absolute;
+          top: 1rem;
+          left: 50%;
+          transform: translateX(-50%) scale(1.5);
+          &.is-show {
+            transform: translateX(-50%) scale(1);
+          }
+        }
+      }
+    }
+    &__answer {
+      &.answer01 {
+        font-size: $font-size-h2;
+        text-align: center;
+        color: $color-strong;
+        margin-bottom: 2rem;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h2} * #{$rsp});
+        }
+      }
+      &.answer02 {
+        .about-question__answer__text {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        .about-question__answer__image {
+          text-align: center;
+          img {
+            display: inline-block;
+            object-fit: contain;
+            width: 75%;
+            @include mq(md) {
+              width: 30%;
+            }
+            @include mq(lg) {
+              width: 23%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

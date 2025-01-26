@@ -1,0 +1,61 @@
+.wp-page-about {
+  .about-tips {
+    .wrapper {
+      border: 3px solid $color-brown;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__title {
+      color: $color-white;
+      background-color: $color-brown;
+      margin-bottom: 0;
+      width: 100%;
+      writing-mode: horizontal-tb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mq(md) {
+        width: 8%;
+        writing-mode:vertical-rl;
+      }
+      @include mq(lg) {
+        width: 6%;
+      }
+    }
+    &__content {
+      padding: 2rem;
+      width: 100%;
+      @include mq(md) {
+        width: 46%;
+        padding: 1rem;
+      }
+      @include mq(lg) {
+        width: 47%;
+        padding: 2rem;
+      }
+      &.content01 {
+        @include mq(md) {
+          order: -1;
+        }
+      }
+      &__title {
+        text-align: center;
+        color: $color-brown;
+        margin-bottom: 0.8em;
+      }
+      &__image {
+        margin-top: 1.5rem;
+        text-align: center;
+        img {
+          display: inline-block;
+          width: 80%;
+          @include mq(md) {
+            width: 40%
+          }
+        }
+      }
+    }
+  }
+}

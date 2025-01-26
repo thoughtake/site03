@@ -1,0 +1,153 @@
+.wp-page-access {
+  .access-content {
+    padding: 40px 0;
+    &.yugawara {
+      background: $background-02;
+      color: $color-white;
+      padding-bottom: 0;
+    }
+    &__title {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      color: $color-white;
+      border: 3px solid $color-white;
+      border-radius: 10px;
+      & > span {
+        display: inline-block;
+        &.hoyojo {
+          padding: 0 1rem;
+          font-size: 1em;
+        }
+      }  
+    }
+    .access-text {
+      text-align: left;
+      margin-bottom: 1em;
+      &.access-content__contact {
+        margin-bottom: 2rem;
+      }
+      .wrapper {
+        display: inline-block;
+        text-align: left;
+        font-size: $font-size-h4;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h4} * #{$rsp});
+        }
+      }
+    }
+    &__access {
+      .wrapper {
+        color: $color-main-light;
+        & > img {
+          display: inline-block;
+          width: $font-size-h4;
+          height: $font-size-h4;
+          object-fit: cover;
+          object-position: center bottom;
+          margin-right: 0.3rem;
+          @include mq(sm) {
+            width: calc(#{$font-size-h4} * #{$rsp});
+            height: calc(#{$font-size-h4} * #{$rsp});          
+          }
+        }
+        span {
+          position: relative;
+        }
+      }
+    }
+    &__contact {
+      .wrapper {
+        & > img {
+          display: inline-block;
+          width: $font-size-h3;
+          height: $font-size-h3;
+          object-fit: cover;
+          object-position: center bottom;
+          margin-right: 0.3rem;
+          @include mq(sm) {
+            width: calc(#{$font-size-h3} * #{$rsp});
+            height: calc(#{$font-size-h3} * #{$rsp});          
+          }
+        }      
+        span {
+          display: inline-block;
+        }
+      }
+      &__tel {
+        text-decoration: underline;
+        font-size: $font-size-h3;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h3} * #{$rsp});
+        }
+      }
+      &__kinds {
+        font-size: 0.9em;
+      }
+    }
+    &__image {
+      display: flex;
+      flex-wrap: wrap;
+      border-right: 20px solid #000;
+      border-left: 20px solid #000;
+      .img-box {
+        height: 200px;
+        width: 100%;
+        @include mq(md) {
+          height: 300px;
+          width: 50%;
+        }
+        img {
+           display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &__map {
+      position: relative;
+      border: 20px solid #000;
+      border-top: 2rem solid #000;
+      &::after {
+        content: "";
+        display: inline-block;
+        padding-top: 60%;
+        @include mq(md) {
+          padding-top: 30%;
+        }
+      }
+      & > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &.nihonbashi {
+      background: $background-03;
+      color: $color-white;
+      .access-content__access {
+        .wrapper {
+          color: $color-attention;
+        }
+      }
+      .access-content__contact__tel {
+        font-size: $font-size-h3;
+        @include mq(sm) {
+          font-size: calc(#{$font-size-h3} * #{$rsp});
+        }        
+      }
+      .access-content__image {
+        border-color: $color-back-03;
+      }
+      .access-content__map {
+        border-color: $color-back-03;
+      }
+
+
+
+    }
+  }
+}
